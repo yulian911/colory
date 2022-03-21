@@ -1,8 +1,8 @@
-
-export interface IColors{
-    id:number,
-    red:number,
-    blue:number,
-    green:number,
-    default:boolean
+export interface IColors {
+  id: number;
+  red: number;
+  blue: number;
+  green: number;
+  default: boolean;
+  hex: string;
 }
