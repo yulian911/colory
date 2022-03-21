@@ -33,19 +33,19 @@ function App() {
         <FilterComponent setFilters={setFilters} colors={colors} />
         <Form colors={colors} setColors={setColors} filters={filters} />
       </div>
-      <div className={styles.card}>
+      <ul>
         {filters.map((el: IColors) => (
           <ItemList
             key={el.id}
             css={`
                {
                 background-color: rgb(${el.red}, ${el.green}, ${el.blue});
-                color: white;
                 border: 1px solid black;
-                border-radius: 12px;
-                display: flex;
-                justify-content: space-between;
-                padding: 10px;
+                border-radius: 5px;
+                width:20px;
+                height:20px;
+              
+             
               }
             `}
             el={el}
@@ -53,7 +53,7 @@ function App() {
           />
     
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

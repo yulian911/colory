@@ -42,7 +42,7 @@
       }
     }
   }
-
+  // Test
   .black {
     color: black;
     font-weight: bold;
@@ -59,6 +59,7 @@
       font-size: 13px;
     }
   }
+  // 
   .deleteButton {
     cursor: pointer;
     border-radius: 10px;
@@ -68,16 +69,55 @@
       color: white;
     }
   }
-  .content {
-    display: flex;
-    flex-direction: column;
+  // Test
+  // .content {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   justify-content: center;
+
+  // }
+  ul{
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+    li{
+    list-style-type: style none;
+    border:1px solid #ccc;
+    min-width: 400px;
+    margin:10px 0;
+    padding: 10px;
+    display:flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    // background-color: red;
-    width: 100%;
+    text-transform: capitalize;
+      .box{
+        width: 100%;
+        display:flex;
+        flex-direction: column;
+        background-color: red;
+        .cos{
+          display:flex;
+          width:90%;
+          background:yellow;
+            .left{
+              width: 46.3%;
+              background-color: aqua;
+            }
+            .center{
+              display: flex;
+              align-items: center;
+            }
+           .right{
+            width: 46.3%;
+             background-color: #ccc;
+           }
+        }
+      }
+    }
   }
 }
-
+//Test
 .card {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -133,7 +173,4 @@
     }
   
   }
-}
-.cos{
-  border:1px solid black
 }

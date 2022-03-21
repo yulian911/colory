@@ -35,27 +35,22 @@ export class ItemList extends Component<ColorProps>{
     const checkHash = hex.slice(0,1)==='#'?hex:`#${hex}`
     // console.log('slice' ,checkHash)
     return (
-        <li >
-          <div className={styles.box} >
-            <div className={styles.cos}> 
-              <div className={styles.left}>
-                  <p>HEX</p>
-                  <p>{checkHash}</p>
-              </div>
-              <div className={styles.center}>
-                  <div className={className}/>
-              </div>
-              <div className={styles.right}>
-                  <p>RGB</p>
-                  <p>({red},{green},{blue})</p>
-              </div>
-            </div>
-            <div>
-              <p>Saturation:{saturation}%</p>
-            </div>
-          
-           
-          </div>
+        <div className={className}>
+        <div className={styles.content}>
+          <p className={check}>
+
+            HEX <span>{checkHash}</span>
+            
+          </p>
+          <p className={check}>Saturation:{saturation}%</p>
+          <p className={check}>
+            RGB
+            <span>
+              ({red},{green},{blue})
+            </span>
+          </p>
+        </div>
+  
         {!this.props.el.default && (
           <button
             className={styles.deleteButton}
@@ -64,7 +59,7 @@ export class ItemList extends Component<ColorProps>{
             x
           </button>
         )}
-      </li>
+      </div>
     )
   }
 
