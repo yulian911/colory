@@ -3,15 +3,16 @@ import styles from "./app.module.scss";
 import FilterComponent from "./components/FilterComponent";
 import Form from "./components/Form";
 import { IColors } from "./components/interface";
-import ItemList from "./components/ItemList";
+import { ItemList } from "./components/ItemList";
+
 import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
   const [colors, setColors] = useLocalStorage("colors", [
-    { id: 1, red: 255, green: 0, blue: 0, default: true, hex: "#FF0000" },
-    { id: 2, red: 0, green: 255, blue: 0, default: true, hex: "#00FF00" },
-    { id: 3, red: 0, green: 0, blue: 255, default: true, hex: "#0000FF" },
-    { id: 4, red: 255, green: 255, blue: 255, default: true, hex: "#FFFFFF" },
+    { id: 1, red: 255, green: 0, blue: 0, default: true, hex: "#FF0000" ,saturation:100 },
+    { id: 2, red: 0, green: 255, blue: 0, default: true, hex: "#00FF00",saturation:100 },
+    { id: 3, red: 0, green: 0, blue: 255, default: true, hex: "#0000FF" ,saturation:100},
+    { id: 4, red: 255, green: 255, blue: 255, default: true, hex: "#FFFFFF",saturation:0 },
   ]);
 
   const deleteColor = (id: number) => {
@@ -25,7 +26,7 @@ function App() {
   }, [colors]);
 
   const [filters, setFilters] = useState<IColors[]>([]);
-  console.log(filters.length);
+
   return (
     <div className={styles.App}>
       <div className={styles.header}>
@@ -50,6 +51,7 @@ function App() {
             el={el}
             deleteColor={deleteColor}
           />
+    
         ))}
       </div>
     </div>

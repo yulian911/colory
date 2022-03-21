@@ -20,10 +20,15 @@ const FilterComponent = ({ setFilters, colors }: IProps) => {
         .filter((x: { green: number }) => x.green > 127)
         .sort(compareFunctionGreen);
       setFilters(updateColors);
-    } else {
+    } else if('blue' === color) {
       const updateColors = colors
         .filter((x: { blue: number }) => x.blue > 127)
         .sort(compareFunctionBlue);
+      setFilters(updateColors);
+    }else{
+      const updateColors = colors
+        .filter((x: { saturation: number }) => x.saturation > 50)
+        .sort(compareFunctionSaturation);
       setFilters(updateColors);
     }
   };
@@ -37,13 +42,18 @@ const FilterComponent = ({ setFilters, colors }: IProps) => {
   const compareFunctionGreen = (a: { green: number }, b: { green: number }) => {
     return b.green - a.green;
   };
+  const compareFunctionSaturation = (a: { saturation: number }, b: { saturation: number }) => {
+    return b.saturation - a.saturation;
+  };
 
+ 
   return (
     <div className={styles.containerFilter}>
       <button onClick={() => setFilters(colors)}>ALL</button>
       <button onClick={() => filterColors("red")}>Red {" > "} 127</button>
       <button onClick={() => filterColors("green")}>Green {" > "} 127</button>
       <button onClick={() => filterColors("blue")}>Blue {" > "} 127</button>
+      <button onClick={() => filterColors("saturation")}>Saturation {" > "} 50%</button>
     </div>
   );
 };

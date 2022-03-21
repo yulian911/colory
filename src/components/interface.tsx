@@ -3,6 +3,7 @@ export interface IColors {
   red: number;
   blue: number;
   green: number;
-  default: boolean;
+  default: boolean ;
   hex: string;
+  saturation:number;
 }

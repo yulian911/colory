@@ -124,5 +124,16 @@
     &:hover {
       opacity: 0.4;
     }
+  
   }
+  button:nth-child(5) {
+    background-color: violet;
+    &:hover {
+      opacity: 0.4;
+    }
+  
+  }
+}
+.cos{
+  border:1px solid black
 }
