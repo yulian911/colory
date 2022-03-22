@@ -9,10 +9,42 @@ import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
   const [colors, setColors] = useLocalStorage("colors", [
-    { id: 1, red: 255, green: 0, blue: 0, default: true, hex: "#FF0000" ,saturation:100 },
-    { id: 2, red: 0, green: 255, blue: 0, default: true, hex: "#00FF00",saturation:100 },
-    { id: 3, red: 0, green: 0, blue: 255, default: true, hex: "#0000FF" ,saturation:100},
-    { id: 4, red: 255, green: 255, blue: 255, default: true, hex: "#FFFFFF",saturation:0 },
+    {
+      id: 1,
+      red: 255,
+      green: 0,
+      blue: 0,
+      default: true,
+      hex: "#FF0000",
+      saturation: 100,
+    },
+    {
+      id: 2,
+      red: 0,
+      green: 255,
+      blue: 0,
+      default: true,
+      hex: "#00FF00",
+      saturation: 100,
+    },
+    {
+      id: 3,
+      red: 0,
+      green: 0,
+      blue: 255,
+      default: true,
+      hex: "#0000FF",
+      saturation: 100,
+    },
+    {
+      id: 4,
+      red: 255,
+      green: 255,
+      blue: 255,
+      default: true,
+      hex: "#FFFFFF",
+      saturation: 0,
+    },
   ]);
 
   const deleteColor = (id: number) => {
@@ -42,16 +74,13 @@ function App() {
                 background-color: rgb(${el.red}, ${el.green}, ${el.blue});
                 border: 1px solid black;
                 border-radius: 5px;
-                width:20px;
-                height:20px;
-              
-             
+                width: 20px;
+                height: 20px;
               }
             `}
             el={el}
             deleteColor={deleteColor}
           />
-    
         ))}
       </ul>
     </div>
